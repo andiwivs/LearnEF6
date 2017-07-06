@@ -48,6 +48,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Migrations\201707062230000_Initial.cs" />
+    <Compile Include="Migrations\201707062230000_Initial.Designer.cs">
+      <DependentUpon>201707062230000_Initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201707062256008_AddDOBToNinja.cs" />
+    <Compile Include="Migrations\201707062256008_AddDOBToNinja.Designer.cs">
+      <DependentUpon>201707062256008_AddDOBToNinja.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="NinjaContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -60,6 +69,14 @@
       <Project>{D8CA635D-828D-4337-92C1-9BB50325DAB6}</Project>
       <Name>NinjaDomain.Classes</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201707062230000_Initial.resx">
+      <DependentUpon>201707062230000_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201707062256008_AddDOBToNinja.resx">
+      <DependentUpon>201707062256008_AddDOBToNinja.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
