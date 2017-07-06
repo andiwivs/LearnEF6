@@ -1,4 +1,4 @@
-﻿namespace NinjaDomain.Classes
+﻿namespace NinjaDomain
 {
     public enum EquipmentType
     {
