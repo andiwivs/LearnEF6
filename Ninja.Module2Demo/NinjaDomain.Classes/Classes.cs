@@ -13,8 +13,12 @@ namespace NinjaDomain
             public bool ServedInOniwaban { get; set; }
             public Clan Clan { get; set; }
             public int ClanId { get; set; }
-            public List<NinjaEquipment> EquipmentOwned { get; set; }
+            public List<NinjaEquipment> EquipmentOwned { get; set; } // mark as virtual to enable lazy-loading of relational data
             public DateTime DateOfBirth { get; set; }
+            public Ninja()
+            {
+                EquipmentOwned = new List<NinjaEquipment>();
+            }
         }
 
         public class Clan
@@ -22,6 +26,10 @@ namespace NinjaDomain
             public int Id { get; set; }
             public string ClanName { get; set; }
             public List<Ninja> Ninjas { get; set; }
+            public Clan()
+            {
+                Ninjas = new List<Ninja>();
+            }
         }
 
         public class NinjaEquipment
