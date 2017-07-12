@@ -157,28 +157,34 @@ namespace ConsoleApplication
             {
                 context.Database.Log = Console.Write;
 
-                // eager loading - using include can be inefficient as includes build up
-                var ninja1 = context
+                // option 1: eager loading - using include can be inefficient as includes build up
+                //var ninja1 = context
+                //                .Ninjas
+                //                .Include(n => n.EquipmentOwned)
+                //                .FirstOrDefault(n => n.Name.StartsWith("important"));
+
+                // option 2: explicit loading - load only what you need
+                //var ninja2 = context
+                //                .Ninjas
+                //                .FirstOrDefault(n => n.Name.StartsWith("important"));
+
+                //context
+                //    .Entry(ninja2)
+                //    .Collection(n => n.EquipmentOwned)
+                //    .Load();
+
+                // option 3: lazy loading - can be inefficient
+                //var ninja3 = context
+                //                .Ninjas
+                //                .FirstOrDefault(n => n.Name.StartsWith("important"));
+
+                //int equipmentCount = ninja3.EquipmentOwned.Count; // with property marked as virtual, we can trigger lazy-load behaviour
+
+                // option 4: projection queries
+                var ninjas = context
                                 .Ninjas
-                                .Include(n => n.EquipmentOwned)
-                                .FirstOrDefault(n => n.Name.StartsWith("important"));
-
-                // explicit loading - load only what you need
-                var ninja2 = context
-                                .Ninjas
-                                .FirstOrDefault(n => n.Name.StartsWith("important"));
-
-                context
-                    .Entry(ninja2)
-                    .Collection(n => n.EquipmentOwned)
-                    .Load();
-
-                // lazy loading - can be inefficient
-                var ninja3 = context
-                                .Ninjas
-                                .FirstOrDefault(n => n.Name.StartsWith("important"));
-
-                int equipmentCount = ninja3.EquipmentOwned.Count; // with property marked as virtual, we can trigger lazy-load behaviour
+                                .Select(n => new { n.Name, n.DateOfBirth, n.EquipmentOwned })  // note: equipment owned collection will be populated for every item
+                                .ToList();
             }
         }
 

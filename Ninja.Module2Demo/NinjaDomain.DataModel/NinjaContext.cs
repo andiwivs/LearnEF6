@@ -8,5 +8,7 @@ namespace NinjaDomain.DataModel
         public DbSet<Ninja> Ninjas { get; set; }
         public DbSet<Clan> Clans { get; set; }
         public DbSet<NinjaEquipment> Equipment { get; set; }
+
+        //public NinjaContext() : base("NinjaDomainConnectionString") { }
     }
 }
