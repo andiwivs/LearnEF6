@@ -42,8 +42,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Classes.cs" />
+    <Compile Include="Clan.cs" />
     <Compile Include="Enums\EquipmentType.cs" />
+    <Compile Include="Interfaces\IModificationHistory.cs" />
+    <Compile Include="Ninja.cs" />
+    <Compile Include="NinjaEquipment.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

@@ -1,5 +1,5 @@
-﻿using System.Data.Entity;
-using static NinjaDomain.Classes;
+﻿using NinjaDomain.Classes;
+using System.Data.Entity;
 
 namespace NinjaDomain.DataModel
 {

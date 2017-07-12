@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.Data;
 using NinjaDomain.DataModel;
-using static NinjaDomain.Classes;
 using System.Data.Entity;
 using System.Data.Entity.Core.Metadata.Edm;
 using System.Linq;
 using NinjaDomain;
+using NinjaDomain.Classes;
 
 namespace ConsoleApplication
 {
@@ -21,7 +21,7 @@ namespace ConsoleApplication
             //InsertNinjaWithEquipment();
 
             //SimpleNinjaQuery();
-            SimpleNinjaGraphQuery();
+            //SimpleNinjaGraphQuery();
 
             //RetrieveDataWithFind();
             //RetrieveDataWithStoredProc();
